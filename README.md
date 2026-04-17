@@ -16,7 +16,7 @@ Gramática e implementación de un lenguaje para operar sobre bases de datos no 
 | `pruebas.crud` | Casos de prueba | INSERT, FIND, UPDATE, DELETE de ejemplo |
 | `CRUDLexer.java` | Generado por ANTLR |  No editar |
 | `CRUDParser.java` | Generado por ANTLR | No editar |
-| `CRUDBaseListener.java` | Generado por ANTLR |  No editar — extiéndelo con `MiListener` |
+| `CRUDBaseListener.java` | Generado por ANTLR |  No editar|
 | `*.class` / `*.tokens` / `*.interp` | Bytecode y metadatos | Agregar al `.gitignore` |
 
 ### Requisitos
