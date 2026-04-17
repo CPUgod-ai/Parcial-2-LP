@@ -1,0 +1,17 @@
+// ── Insertar documentos ──────────────────────────
+INSERT INTO usuarios { nombre: "Carlos", edad: 25, activo: true };
+INSERT INTO productos { nombre: "Laptop", precio: 1500.99, stock: 10 };
+
+// ── Buscar ───────────────────────────────────────
+FIND FROM usuarios;
+FIND FROM usuarios WHERE edad > 18;
+FIND FROM productos WHERE precio <= 2000 AND stock != 0;
+
+// ── Actualizar ───────────────────────────────────
+UPDATE usuarios SET edad = 26 WHERE nombre == "Carlos";
+UPDATE productos SET stock = 5;
+
+// ── Eliminar ─────────────────────────────────────
+DELETE FROM usuarios WHERE activo == false;
+DELETE FROM productos WHERE stock == 0;
+
