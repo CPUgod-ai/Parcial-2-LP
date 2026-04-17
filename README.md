@@ -2,17 +2,6 @@
 
 Trabajos prácticos del curso. Cada punto implementa un componente diferente de análisis léxico/sintáctico.
 
----
-
-## Tabla de contenido
-
-- [Puntos 1 y 2 — CRUD NoSQL con ANTLR4](#puntos-1-y-2--crud-nosql-con-antlr4)
-- [Punto 3 — Gramática LL(1)](#punto-3--gramática-ll1)
-- [Punto 4 — Benchmark CYK vs Predictivo](#punto-4--benchmark-cyk-vs-predictivo)
-- [Punto 5 — Calculadora Booleana con YACC/Flex](#punto-5--calculadora-booleana-con-yaccflex)
-
----
-
 ## Puntos 1 y 2 — CRUD NoSQL con ANTLR4
 
 Gramática e implementación de un lenguaje para operar sobre bases de datos no relacionales (estilo MongoDB), con soporte para INSERT, FIND, UPDATE y DELETE.
@@ -21,13 +10,13 @@ Gramática e implementación de un lenguaje para operar sobre bases de datos no 
 
 | Archivo | Rol | Notas |
 |---|---|---|
-| `CRUD.g4` | Gramática ANTLR4 | ⚠️ El único que debes editar |
+| `CRUD.g4` | Gramática ANTLR4 | El único que debes editar |
 | `MiListener.java` | Acciones semánticas | Implementa `enterInsertar`, `enterBuscar`, etc. |
 | `Main.java` | Punto de entrada | Lee el archivo y lanza el parser |
 | `pruebas.crud` | Casos de prueba | INSERT, FIND, UPDATE, DELETE de ejemplo |
-| `CRUDLexer.java` | Generado por ANTLR | ❌ No editar |
-| `CRUDParser.java` | Generado por ANTLR | ❌ No editar |
-| `CRUDBaseListener.java` | Generado por ANTLR | ❌ No editar — extiéndelo con `MiListener` |
+| `CRUDLexer.java` | Generado por ANTLR |  No editar |
+| `CRUDParser.java` | Generado por ANTLR | No editar |
+| `CRUDBaseListener.java` | Generado por ANTLR |  No editar — extiéndelo con `MiListener` |
 | `*.class` / `*.tokens` / `*.interp` | Bytecode y metadatos | Agregar al `.gitignore` |
 
 ### Requisitos
@@ -79,12 +68,6 @@ java -cp .:$HOME/antlr-4.13.1-complete.jar Main pruebas.crud
   Filtro    : activo==false
 ```
 
-> **Nota sobre los errores comunes:**
-> - Si ves `CRUDListener is abstract` → borra `CRUDListener.java` generado por ANTLR y usa solo `MiListener.java`
-> - Si ves `package org.antlr... does not exist` → usa `$HOME` en vez de `~` en el classpath
-> - Si ves `mismatched input '='` → verifica que `CRUD.g4` tenga `ASSIGN : '=' ;` separado de `EQ : '==' ;`
-
----
 
 ## Punto 3 — Gramática LL(1)
 
