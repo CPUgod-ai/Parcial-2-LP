@@ -152,9 +152,13 @@ xdg-open grafica.png
 <img width="646" height="475" alt="image" src="https://github.com/user-attachments/assets/4b723b9a-63f7-431c-8a40-dd781bcc6919" />
 
 
-### Conclusión
+## ¿Qué significan estas métricas?
 
-El parser predictivo es consistentemente más rápido porque recorre la entrada una sola vez (O(n)). CYK escala cúbicamente con el número de tokens — en E12 (27 tokens) es **65 veces más lento**. Para gramáticas simples como expresiones aritméticas, el enfoque LL(1) es claramente superior en rendimiento.
+El benchmark mide dos cosas por cada expresión: el tiempo de ejecución promedio (en milisegundos, calculado sobre 200 repeticiones para reducir el ruido) y el pico de memoria (en kilobytes, capturado con tracemalloc). La columna "Tokens" indica cuántos elementos léxicos tiene la expresión —números y operadores— porque la complejidad de ambos algoritmos depende directamente de ese número, no de la longitud de la cadena en caracteres.
+Al comparar los tiempos se ve con claridad cómo CYK crece de forma cúbica: pasar de 3 tokens a 27 tokens (E12) multiplica su tiempo aproximadamente ×50, mientras que el predictivo apenas varía porque su crecimiento es lineal. La razón es estructural: CYK rellena una tabla triangular de tamaño n×n evaluando todas las particiones posibles de cada subcadena, lo que genera operaciones redundantes aunque la expresión sea válida. El parser predictivo descarta ambigüedades desde el primer token y avanza siempre hacia adelante sin retroceder.
+
+## Conclusión
+El parser predictivo es consistentemente más rápido porque recorre la entrada una sola vez (O(n)). CYK escala cúbicamente con el número de tokens — en E12 (27 tokens) es 65 veces más lento. Para gramáticas simples como expresiones aritméticas, el enfoque LL(1) es claramente superior en rendimiento.
 
 ---
 
@@ -205,8 +209,6 @@ gcc bool.tab.c lex.yy.c -o boolcalc -lfl
 ### Salida esperada
 
 ```
-Calculadora Booleana (Ctrl+D para salir)
-==========================================
 Resultado: FALSE
 
 Resultado: TRUE
