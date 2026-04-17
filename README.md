@@ -149,7 +149,8 @@ xdg-open grafica.png
 | E12 | 27 | ~2.60 ms | ~0.040 ms | ~65× |
 | E13 | 19 | ~2.05 ms | ~0.070 ms | ~29× |
 
-![Comparación CYK vs Predictivo](grafica.png)
+<img width="646" height="475" alt="image" src="https://github.com/user-attachments/assets/4b723b9a-63f7-431c-8a40-dd781bcc6919" />
+
 
 ### Conclusión
 
@@ -216,12 +217,6 @@ Resultado: FALSE
 
 Resultado: FALSE
 ```
-
-> **Error frecuente:** si aparece `syntax error` inmediatamente, el problema es que `bool.l` está descartando `\n` con `[ \t\n]`. Corrígelo separando en dos reglas:
-> ```
-> \n          { return '\n'; }   ← pasarlo al parser
-> [ \t\r]     { /* ignorar */ }  ← solo espacios
-> ```
 
 ### Desempeño del analizador
 
