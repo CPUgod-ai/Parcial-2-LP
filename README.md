@@ -1,6 +1,7 @@
-# Compiladores e Intérpretes
+# Introducción
 
-Trabajos prácticos del curso. Cada punto implementa un componente diferente de análisis léxico/sintáctico.
+Este Parcial reúne cinco implementaciones prácticas de los conceptos fundamentales de compiladores e intérpretes. A lo largo de los puntos se trabajan las distintas fases del análisis de lenguajes formales: desde el reconocimiento léxico y sintáctico hasta la evaluación semántica, pasando por la construcción y verificación de gramáticas.
+Los trabajos cubren un espectro amplio de herramientas y enfoques: el uso de ANTLR4 para generar automáticamente un parser de un lenguaje NoSQL, la verificación manual de la propiedad LL(1) sobre una gramática con producciones épsilon, la comparación empírica de dos estrategias de análisis sintáctico con distinta complejidad algorítmica, y la construcción de una calculadora booleana con Bison y Flex. En conjunto, permiten contrastar parsers generados automáticamente con parsers escritos a mano, y analizadores top-down con bottom-up, evidenciando las ventajas y limitaciones de cada enfoque según el tipo de gramática y el contexto de uso.
 
 ## Puntos 1 y 2 — CRUD NoSQL con ANTLR4
 
