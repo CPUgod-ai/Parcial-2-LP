@@ -10,7 +10,7 @@ Gramática e implementación de un lenguaje para operar sobre bases de datos no 
 
 | Archivo | Rol | Notas |
 |---|---|---|
-| `CRUD.g4` | Gramática ANTLR4 | El único que debes editar |
+| `CRUD.g4` | Gramática ANTLR4 | El editable|
 | `MiListener.java` | Acciones semánticas | Implementa `enterInsertar`, `enterBuscar`, etc. |
 | `Main.java` | Punto de entrada | Lee el archivo y lanza el parser |
 | `pruebas.crud` | Casos de prueba | INSERT, FIND, UPDATE, DELETE de ejemplo |
